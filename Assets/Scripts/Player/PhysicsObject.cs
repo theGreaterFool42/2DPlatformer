@@ -19,8 +19,10 @@ public class PhysicsObject : MonoBehaviour
     protected RaycastHit2D[] hitbuffer = new RaycastHit2D[16];
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16);
 
-    protected RaycastHit2D[] wjHitbuffer = new RaycastHit2D[16];
-    protected List<RaycastHit2D> wjHitBufferList = new List<RaycastHit2D>(16);
+    protected RaycastHit2D[] wjr_hitbuffer = new RaycastHit2D[16];
+    protected List<RaycastHit2D> wjr_hitbufferList = new List<RaycastHit2D>(16);
+    protected RaycastHit2D[] wjl_hitbuffer = new RaycastHit2D[16];
+    protected List<RaycastHit2D> wjl_hitbufferList = new List<RaycastHit2D>(16);
     protected const float shellRadius = 0.01f;
     //protected float distance;
 
@@ -62,14 +64,14 @@ public class PhysicsObject : MonoBehaviour
 
         Vector2 move = moveAlongGround * deltaPosition.x;
 
-        Movement(move, false, deltaPosition);
+        Movement(move, false);
 
         move = Vector2.up * deltaPosition.y;
 
-        Movement(move, true, deltaPosition);
+        Movement(move, true);
     }
 
-    void Movement(Vector2 move, bool yMovement, Vector2 deltaPostion)
+    void Movement(Vector2 move, bool yMovement)
     {
         float distance = move.magnitude;
 
@@ -107,14 +109,24 @@ public class PhysicsObject : MonoBehaviour
                 float modifiedDistance = hitBufferList[i].distance - shellRadius;
                 distance = modifiedDistance < distance ? modifiedDistance : distance;
             }
-
-            int wjCount = rb2d.Cast(deltaPostion, contactFilter, wjHitbuffer, distance + shellRadius);
-            wjHitBufferList.Clear();
-            for (int i = 0; i < count; i++)
+            // This is for wall jump
+            int wjr_count = rb2d.Cast(new Vector2(1,0), contactFilter, wjr_hitbuffer, distance + shellRadius);
+            wjr_hitbufferList.Clear();
+            for (int i = 0; i < wjr_count; i++)
             {
-                wjHitBufferList.Add(wjHitbuffer[i]);
+                wjr_hitbufferList.Add(wjr_hitbuffer[i]);
             }
-            for (int i = 0; i < hitBufferList.Count; i++)
+            for (int i = 0; i < wjr_hitbufferList.Count; i++)
+            {
+                isGrounded = true;
+            }
+            int wjl_count = rb2d.Cast(new Vector2(-1, 0), contactFilter, wjl_hitbuffer, distance + shellRadius);
+            wjl_hitbufferList.Clear();
+            for (int i = 0; i < wjl_count; i++)
+            {
+                wjl_hitbufferList.Add(wjl_hitbuffer[i]);
+            }
+            for (int i = 0; i < wjl_hitbufferList.Count; i++)
             {
                 isGrounded = true;
             }

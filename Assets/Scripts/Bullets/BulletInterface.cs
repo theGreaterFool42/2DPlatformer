@@ -7,4 +7,19 @@ public class BulletInterface : MonoBehaviour {
     {
         velocity = vel;
     }
+
+    void OnEnable()
+    {
+        Invoke("Destroy", 7f);
+    }
+
+    void Destroy()
+    {
+        gameObject.SetActive(false);
+    }
+
+    void OnDisable()
+    {
+        CancelInvoke();
+    }
 }

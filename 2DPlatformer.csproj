@@ -84,6 +84,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Antonio&apos;s Folder\CircleBullets.cs" />
+    <Compile Include="Assets\Antonio&apos;s Folder\CircleBulletsSpawner.cs" />
+    <Compile Include="Assets\Antonio&apos;s Folder\NormalBulletSpawner.cs" />
     <Compile Include="Assets\Scripts\Bullets\BulletBehaviour.cs" />
     <Compile Include="Assets\Scripts\Bullets\BulletInterface.cs" />
     <Compile Include="Assets\Scripts\Bullets\BulletSpawnScript.cs" />

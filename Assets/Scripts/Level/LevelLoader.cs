@@ -96,10 +96,3 @@ public class LevelLoader : MonoBehaviour
         levelFileName = levelNames[i];
     }
 }
-
-
-
-/*
- Things are getting crazy. If Toni can read this I'm the git master!!!
-     
-     */

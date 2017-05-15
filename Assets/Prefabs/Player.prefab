@@ -184,10 +184,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
-  minSpeed: 50
-  maxSpeed: 100
+  minSpeed: 25
+  maxSpeed: 35
   timeToMaxSpeed: 1
-  jumpHeight: 45
+  jumpHeight: 35
   extraGravity: 3
 --- !u!114 &114985236824083110
 MonoBehaviour:
