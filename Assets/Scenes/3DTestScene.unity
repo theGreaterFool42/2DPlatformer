@@ -108,56 +108,80 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &789097204
+--- !u!1 &1217558605
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 789097206}
-  - component: {fileID: 789097205}
+  - component: {fileID: 1217558607}
+  - component: {fileID: 1217558606}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Directional light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &789097205
-MonoBehaviour:
+--- !u!108 &1217558606
+Light:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 789097204}
+  m_GameObject: {fileID: 1217558605}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46691504b8bb78e47923bd8e3b6c5edc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
---- !u!4 &789097206
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1217558607
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 789097204}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.69171, y: 36.507797, z: 0}
+  m_GameObject: {fileID: 1217558605}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 49.290325, y: 208.22261, z: 31.276798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1959240407
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1928969768
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1959240409}
-  - component: {fileID: 1959240408}
+  - component: {fileID: 1928969770}
+  - component: {fileID: 1928969769}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -165,62 +189,67 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1959240408
+--- !u!114 &1928969769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1959240407}
+  m_GameObject: {fileID: 1928969768}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0faf4ab491aca4439d936bb0c5eeda5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelNames:
-  - Fin-GerLevel2.png
+  - Level - 2DPlatformer.png
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   colorToPrefab:
   - color:
       serializedVersion: 2
       rgba: 4278190080
-    prefab: {fileID: 1275490002397154, guid: 7491134f800ca5a4a91a35b7c45d3f37, type: 2}
+    prefab: {fileID: 1554349794925904, guid: a8327a8176b8007489243db18be92ac5, type: 2}
   - color:
       serializedVersion: 2
       rgba: 4278190335
-    prefab: {fileID: 1260769356481832, guid: 23e9b65cc2f61d640a800753be0a1225, type: 2}
+    prefab: {fileID: 1554349794925904, guid: a8327a8176b8007489243db18be92ac5, type: 2}
   - color:
       serializedVersion: 2
       rgba: 4278255360
-    prefab: {fileID: 1670405212795898, guid: 39ebab02d50c2b44587365b7fe9e2a74, type: 2}
+    prefab: {fileID: 1554349794925904, guid: a8327a8176b8007489243db18be92ac5, type: 2}
   - color:
       serializedVersion: 2
       rgba: 4294901760
-    prefab: {fileID: 1684476252520240, guid: ad18d8465cbb82f43a5fe4ee73daa20e, type: 2}
+    prefab: {fileID: 1554349794925904, guid: a8327a8176b8007489243db18be92ac5, type: 2}
   - color:
       serializedVersion: 2
       rgba: 4294967295
-    prefab: {fileID: 1185347093545674, guid: c036c532bfec4a24390fb486b7b04b39, type: 2}
-  - color:
-      serializedVersion: 2
-      rgba: 4294901981
-    prefab: {fileID: 1075364990797098, guid: eae5ecf4ca4c8fd449335212fa4075ec, type: 2}
+    prefab: {fileID: 1554349794925904, guid: a8327a8176b8007489243db18be92ac5, type: 2}
   - color:
       serializedVersion: 2
       rgba: 4294902015
-    prefab: {fileID: 1075364990797098, guid: eae5ecf4ca4c8fd449335212fa4075ec, type: 2}
+    prefab: {fileID: 1554349794925904, guid: a8327a8176b8007489243db18be92ac5, type: 2}
+  - color:
+      serializedVersion: 2
+      rgba: 4294901981
+    prefab: {fileID: 1554349794925904, guid: a8327a8176b8007489243db18be92ac5, type: 2}
   - color:
       serializedVersion: 2
       rgba: 4278255560
-    prefab: {fileID: 1696072690931628, guid: 83a816172db70bd49ac717716322b850, type: 2}
---- !u!4 &1959240409
+    prefab: {fileID: 1433888981579570, guid: 9d7c6b23f487cd242ae81ca7252183fd, type: 2}
+--- !u!4 &1928969770
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1959240407}
+  m_GameObject: {fileID: 1928969768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 213.01097, y: 37.087322, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CustomCharacterController : PhysicsObject
 {
-    public float minSpeed = 25f;
+    public float minSpeed = 15f;
     public float maxSpeed = 35f;
     public float timeToMaxSpeed = 1f;
     public float jumpHeight = 35f;
@@ -55,6 +55,6 @@ public class CustomCharacterController : PhysicsObject
         }
 
         targetVelocity = moveDirection * speed;
-        //Debug.Log("");
+        //Debug.Log("Speed: " + targetVelocity);
     }
 }

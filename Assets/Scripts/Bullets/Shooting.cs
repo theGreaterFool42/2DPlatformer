@@ -7,7 +7,7 @@ public class Shooting : MonoBehaviour
     GameObject bullet;
     GameObject bullet_1;
     GameObject bullet_2;
-    public float bulletSpeed = 3.0f;
+    public float bulletSpeed = 30.0f;
     public float fireRate = 0f;
     private string bulletType;
     private float timeToFire = 0f;
@@ -51,7 +51,7 @@ public class Shooting : MonoBehaviour
             timeToFire = Time.time + 1 / fireRate;
             //Debug.Log("Bullet: " + bullet);
             Shoot();
-        Debug.Log("Hey");
+        //Debug.Log("Hey");
         }
     }
 
@@ -62,7 +62,7 @@ public class Shooting : MonoBehaviour
         Rigidbody2D rb2d = bulletClone.GetComponent<Rigidbody2D>();
         //bulletClone.transform.position = bulletClone.transform.position + new Vector3(mousePosition.x, mousePosition.y, 0) * Time.deltaTime;
         //rb2d.transform.position += new Vector3(mousePosition.x, mousePosition.y, 0) * Time.deltaTime;
-        rb2d.velocity = mousePosition * bulletSpeed;
+        rb2d.velocity = mousePosition.normalized * bulletSpeed;
         Destroy(bulletClone, 10.0f);
     }
 }

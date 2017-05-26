@@ -11,6 +11,7 @@ public class NormalBulletSpawner : MonoBehaviour {
     List<GameObject> normalBullets;
     // Use this for initialization
     void Start () {
+        normalBullet = Resources.Load("Sprites/Bullets/NormalBullet") as GameObject;
         normalBullets = new List<GameObject>();
         for (int i = 0; i < pooledAmount; i++)
         {

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4737282646124734}
   - component: {fileID: 212886437320012770}
   - component: {fileID: 114428675566549740}
+  - component: {fileID: 58981368769076998}
   m_Layer: 0
   m_Name: CircleBulletSpawner
   m_TagString: Untagged
@@ -41,6 +42,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58981368769076998
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709543138616506}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 15
 --- !u!114 &114428675566549740
 MonoBehaviour:
   m_ObjectHideFlags: 1

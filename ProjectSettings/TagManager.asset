@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerBullet
   - EnemyBullet
+  - Level
+  - PlayerTriggerThing
   layers:
   - Default
   - TransparentFX
