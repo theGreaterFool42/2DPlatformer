@@ -10,50 +10,121 @@ public class CameraController : MonoBehaviour
     public Transform CamPosOnSide;
     public Transform Player;
     float speed = 10.0f;
-    private float timeSinceStart;
-    private float journeyLength;
-    private Transform startMarker;
-    private Transform endMarker;
+    public float timeSinceStart;
+    public float journeyLength;
+    public Transform startMarker;
+    public Transform endMarker;
+    public GameObject KolibriJump;
+    public GameObject KolibriFly;
+    public GameManager _gameManager;
+    private GameManager.GameState lastState;
+
 
     // Use this for initialization
     void Start()
     {
         playerCam = GetComponent<Camera>();
-        startMarker = CamPosOnSide;
-        endMarker = CamPosBehind;
+        startMarker = CamPosAbove;
+        endMarker = CamPosOnSide;
+        _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        lastState = _gameManager.currentState;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.Y))
         {
-            //Go Behind
-            timeSinceStart = 0;
-            startMarker = endMarker;
-            endMarker = CamPosBehind;
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                //Go Behind
+                _gameManager.currentState = GameManager.GameState.BulletHellFromSide;
+                //timeSinceStart = 0;
+                //startMarker = endMarker;
+                //endMarker = CamPosBehind;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                //Go Above
+                _gameManager.currentState = GameManager.GameState.BulletHellFromAbove;
+                //timeSinceStart = 0;
+                //startMarker = endMarker;
+                //endMarker = CamPosAbove;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                //Go Side
+                _gameManager.currentState = GameManager.GameState.JumpnRun;
+                //timeSinceStart = 0;
+                //startMarker = endMarker;
+                //endMarker = CamPosOnSide;
+            } 
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        //This is the new and better one
+        //Change to this one when the tranformation to the new system is finished
+        if ((timeSinceStart > 3f) && (lastState !=_gameManager.currentState))
         {
-            //Go Above
-            timeSinceStart = 0;
-            startMarker = endMarker;
-            endMarker = CamPosAbove;
+            switch (_gameManager.currentState)
+            {
+                case GameManager.GameState.JumpnRun:
+                    timeSinceStart = 0;
+                    startMarker = endMarker;
+                    endMarker = CamPosOnSide;
+                    //Replace this with Animation
+                    KolibriJump.SetActive(true);
+                    KolibriFly.SetActive(false);
+                    break;
+                case GameManager.GameState.BulletHellFromAbove:
+                    timeSinceStart = 0;
+                    startMarker = endMarker;
+                    endMarker = CamPosAbove;
+                    //Replace this with Animation
+                    KolibriFly.SetActive(true);
+                    KolibriJump.SetActive(false);
+                    break;
+                case GameManager.GameState.BulletHellFromSide:
+                    //Here are still the old CameraFromBehind values. CHANGE THIS!
+                    timeSinceStart = 0;
+                    startMarker = endMarker;
+                    endMarker = CamPosBehind;
+                    //Replace this with Animation
+                    KolibriJump.SetActive(true);
+                    KolibriFly.SetActive(false);
+                    break;
+                default:
+                    break;
+            }
+            lastState = _gameManager.currentState;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            //Go Side
-            timeSinceStart = 0;
-            startMarker = endMarker;
-            endMarker = CamPosOnSide;
-        }
+
+
         ChangeCameraPosition(startMarker, endMarker);
         playerCam.transform.LookAt(Player);
+        
+
+        switch (endMarker.ToString())
+        {
+            case "CamPosBehind (UnityEngine.Transform)":
+                break;
+            case "CamPosAbove (UnityEngine.Transform)":
+                //Replace this with Animation
+                KolibriFly.SetActive(true);
+                KolibriJump.SetActive(false);
+                break;
+            case "CamPosOnSide (UnityEngine.Transform)":
+                //Replace this with Animation
+                KolibriJump.SetActive(true);
+                KolibriFly.SetActive(false);
+                break;
+            default:
+                break;
+        }
+        //print(endMarker.ToString());
     }
 
 
 
-    void ChangeCameraPosition(Transform startMarker, Transform endMarker)
+    public void ChangeCameraPosition(Transform startMarker, Transform endMarker)
     {
         timeSinceStart += Time.deltaTime;
         //Debug.Log(timeSinceStart);

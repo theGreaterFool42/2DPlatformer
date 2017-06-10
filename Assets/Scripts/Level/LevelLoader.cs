@@ -8,6 +8,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 
 [System.Serializable]
@@ -78,6 +79,11 @@ public class LevelLoader : MonoBehaviour
 
         foreach (ColorToPrefab ctp in colorToPrefab)
         {
+            //if((c.r + c.g + c.b ) < 10)
+            //{
+            //    GameObject go = Instantiate(ctp.prefab, new Vector3(x, y, 0), Quaternion.identity);
+            //}
+
             if (c.Equals(ctp.color))
             {
                 GameObject go = Instantiate(ctp.prefab, new Vector3(x, y, 0), Quaternion.identity);

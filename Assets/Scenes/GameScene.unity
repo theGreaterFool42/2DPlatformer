@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 789097205}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  currentState: 0
 --- !u!4 &789097206
 Transform:
   m_ObjectHideFlags: 0
@@ -242,42 +243,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNames:
-  - Level - 2DPlatformer.png
+  - New-Level-1.png
   - 
   - 
   colorToPrefab:
   - color:
       serializedVersion: 2
       rgba: 4278190080
-    prefab: {fileID: 1275490002397154, guid: 7491134f800ca5a4a91a35b7c45d3f37, type: 2}
+    prefab: {fileID: 1592384172147824, guid: e4c3cc76add339b46bc16d429d4466df, type: 2}
   - color:
       serializedVersion: 2
       rgba: 4278190335
-    prefab: {fileID: 1260769356481832, guid: 23e9b65cc2f61d640a800753be0a1225, type: 2}
+    prefab: {fileID: 1660211043588542, guid: aff12ce47e00a694a89dc5d1282950df, type: 2}
   - color:
       serializedVersion: 2
-      rgba: 4278255360
-    prefab: {fileID: 1670405212795898, guid: 39ebab02d50c2b44587365b7fe9e2a74, type: 2}
+      rgba: 4278190591
+    prefab: {fileID: 1660211043588542, guid: 0227dd7fab689cd439ce7da3f9508434, type: 2}
   - color:
       serializedVersion: 2
-      rgba: 4294901760
-    prefab: {fileID: 1684476252520240, guid: ad18d8465cbb82f43a5fe4ee73daa20e, type: 2}
+      rgba: 4278190847
+    prefab: {fileID: 1660211043588542, guid: 0b308e856af86d245b4de9d5553f030e, type: 2}
   - color:
       serializedVersion: 2
       rgba: 4294967295
     prefab: {fileID: 1185347093545674, guid: c036c532bfec4a24390fb486b7b04b39, type: 2}
   - color:
       serializedVersion: 2
-      rgba: 4294901981
-    prefab: {fileID: 1075364990797098, guid: eae5ecf4ca4c8fd449335212fa4075ec, type: 2}
+      rgba: 4278190081
+    prefab: {fileID: 1876787039664440, guid: e88a5e3bb9bfa2b4498d7a0038178310, type: 2}
   - color:
       serializedVersion: 2
-      rgba: 4294902015
-    prefab: {fileID: 1075364990797098, guid: eae5ecf4ca4c8fd449335212fa4075ec, type: 2}
+      rgba: 4278190082
+    prefab: {fileID: 1866618444659206, guid: ddd2ceddffc155f419e2f4a37b8de6ed, type: 2}
   - color:
       serializedVersion: 2
       rgba: 4278255560
-    prefab: {fileID: 1696072690931628, guid: 83a816172db70bd49ac717716322b850, type: 2}
+    prefab: {fileID: 1840898058130214, guid: 27d46fe92f4406743a83d14d9a774652, type: 2}
 --- !u!4 &1959240409
 Transform:
   m_ObjectHideFlags: 0

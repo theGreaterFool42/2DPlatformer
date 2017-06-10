@@ -8,6 +8,8 @@ TagManager:
   - EnemyBullet
   - Level
   - PlayerTriggerThing
+  - GameManager
+  - CameraTrigger
   layers:
   - Default
   - TransparentFX
