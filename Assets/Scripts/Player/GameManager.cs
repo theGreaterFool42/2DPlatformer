@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public Vector3 getPlayerPos()
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
         return Player.position;
     }
 }
